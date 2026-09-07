@@ -1,6 +1,7 @@
 {
   stdenvNoCC,
   lib,
+  pkgs,
   python314,
   makeWrapper,
 }:
@@ -9,6 +10,7 @@ stdenvNoCC.mkDerivation {
   version = "0.1.0";
 
   nativeBuildInputs = [makeWrapper];
+  buildInput = [pkgs.python314Packages.textual];
   dontUnpack = true;
   dontBuild = true;
 
